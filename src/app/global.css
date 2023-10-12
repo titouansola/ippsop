@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  nav > a,
+  nav > div {
+    @apply px-3 py-1 transition-all;
+  }
+  nav > a.selected {
+    @apply bg-hint text-white;
+  }
+  nav > a:not(.selected) {
+    @apply hover:text-hint;
+  }
+}
+
+@layer components {
+  .absolute-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  .px-main {
+    @apply xl:px-25 px-6;
+  }
+}

@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+
 export default function IndexPage() {
-  return <div>Hello World!</div>;
+  redirect('/home');
 }

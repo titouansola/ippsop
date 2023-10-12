@@ -5,30 +5,26 @@ import {
   Iframe,
   IframeOptions,
 } from 'sanity-plugin-iframe-pane';
-import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url';
 import { visionTool } from '@sanity/vision';
 import {
-  apiVersion,
-  dataset,
-  previewSecretId,
-  projectId,
-} from '@ippsop/lib/sanity.api';
+  sanityApiVersion,
+  sanityDataset,
+  sanityProjectId,
+} from '@ippsop/lib/client.api';
 import { schema } from '@ippsop/schema';
 
 const iFrameOptions = {
   url: defineUrlResolver({
-    base: '/api/draft',
+    base: '/api/preview',
   }),
-  urlSecretId: previewSecretId,
-  reload: { button: true },
 } satisfies IframeOptions;
 
 export default defineConfig({
   basePath: '/studio',
   name: 'ippsop',
   title: 'IPPSOP Gaël Guenec',
-  projectId,
-  dataset,
+  projectId: sanityProjectId,
+  dataset: sanityDataset,
   schema,
   plugins: [
     deskTool({
@@ -39,10 +35,6 @@ export default defineConfig({
         ]);
       },
     }),
-    previewUrl({
-      base: '/api/draft',
-      urlSecretId: previewSecretId,
-    }),
-    visionTool({ defaultApiVersion: apiVersion }),
+    visionTool({ defaultApiVersion: sanityApiVersion }),
   ],
 });

@@ -56,7 +56,7 @@
   }
 
   footer li {
-    @apply font-light;
+    @apply font-light flex gap-3 items-center;
   }
 }
 

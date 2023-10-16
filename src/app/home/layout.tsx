@@ -6,7 +6,7 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
       <Header />
-      <main className={'px-main'}>{children}</main>
+      <main className={'px-main max-w-content mx-auto'}>{children}</main>
       <Footer />
     </>
   );

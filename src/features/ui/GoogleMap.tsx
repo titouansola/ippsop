@@ -38,7 +38,7 @@ const defaultMapOptions: google.maps.MapOptions = {
 };
 
 const DivWrapper = forwardRef<HTMLDivElement>(function DivWrapper(_, ref) {
-  return <div ref={ref} className={'h-[400px] w-[800px] bg-gray-400'} />;
+  return <div ref={ref} className={'block-shadow min-h-[300px] bg-gray-400'} />;
 });
 
 const Map: FC<PropsWithChildren> = ({ children }) => {

@@ -38,7 +38,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="fr" className={`${satoshi.variable} ${bebas.variable}`}>
       <body
         className={
-          'bg-body font-body relative m-0 min-h-screen font-medium text-black'
+          'relative m-auto min-h-screen bg-body font-body font-medium text-black'
         }
       >
         {children}

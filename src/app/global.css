@@ -3,6 +3,10 @@
 @tailwind components;
 
 @layer base {
+  section {
+    @apply mb-32;
+  }
+
   nav > a,
   nav > div {
     @apply px-3 py-1 transition-all;
@@ -12,6 +16,47 @@
   }
   nav > a:not(.selected) {
     @apply hover:text-hint;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h4 {
+    letter-spacing: -0.0225rem;
+  }
+
+  h1 {
+    @apply font-wide;
+  }
+
+  h2 {
+    @apply text-4xl font-black;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  button {
+    @apply px-5 py-2 text-center uppercase w-fit font-black font-wide text-xl block-shadow;
+    letter-spacing: 0.1rem;
+  }
+
+  button.primary {
+    @apply text-white bg-hint;
+  }
+
+  footer h6 {
+    @apply font-bold mb-9 text-lg;
+  }
+
+  footer ul {
+    @apply flex flex-col gap-4;
+  }
+
+  footer li {
+    @apply font-light;
   }
 }
 
@@ -24,6 +69,15 @@
   }
 
   .px-main {
-    @apply xl:px-25 px-6;
+    @apply px-6 xl:px-25;
+  }
+
+  .block-shadow {
+    box-shadow:
+      3px 2px 8px 0 rgba(0, 0, 0, 0.1),
+      12px 9px 15px 0 rgba(0, 0, 0, 0.09),
+      27px 21px 21px 0 rgba(0, 0, 0, 0.05),
+      48px 38px 24px 0 rgba(0, 0, 0, 0.01),
+      75px 59px 27px 0 rgba(0, 0, 0, 0);
   }
 }

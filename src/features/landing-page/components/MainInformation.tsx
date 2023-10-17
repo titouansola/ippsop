@@ -1,11 +1,10 @@
 import { GoogleMap } from '@ippsop/features/ui/GoogleMap';
 import { Schedule } from '@ippsop/features/landing-page/components/Schedule';
-import Image from 'next/image';
 
 export function MainInformation() {
   return (
-    <section className={'flex gap-9'}>
-      <div className={'flex flex-col gap-9'}>
+    <section className={'flex flex-col gap-9 sm:flex-row'}>
+      <div className={'flex flex-col gap-9 sm:w-1/2'}>
         <div className={'block-shadow bg-black px-9 py-6 text-white'}>
           <h3 className={'mb-6'}>Espace Coralia</h3>
           <p>
@@ -18,12 +17,12 @@ export function MainInformation() {
           <Schedule />
           <div
             className={
-              'bg-schedule block-shadow h-full w-1/3 bg-cover bg-center bg-no-repeat'
+              'bg-schedule block-shadow hidden h-full w-1/3 bg-cover bg-center bg-no-repeat lg:block'
             }
           />
         </div>
       </div>
-      <div className={'flex flex-col gap-9'}>
+      <div className={'flex flex-col gap-9 sm:w-1/2'}>
         <GoogleMap />
         <div
           className={'block-shadow relative bg-black px-9 pb-9 pt-6 text-white'}

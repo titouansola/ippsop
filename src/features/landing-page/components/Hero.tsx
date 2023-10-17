@@ -3,10 +3,18 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <section>
-      <h1 className={'my-32 w-full text-center text-8xl'}>
+      <h1
+        className={
+          'animate-fade-in my-32 w-full text-center text-5xl sm:text-8xl'
+        }
+      >
         Préparateur physique spécialisé
       </h1>
-      <div className={'flex flex-row-reverse gap-14'}>
+      <div
+        className={
+          'animate-fade-in-slide-up flex flex-col gap-14 lg:flex-row-reverse'
+        }
+      >
         <div
           className={
             'block-shadow relative flex grow flex-col gap-25 bg-black px-9 py-6 text-white'
@@ -26,7 +34,9 @@ export function Hero() {
             src={'/img/gael.png'}
             width={192}
             height={376}
-            className={'absolute -right-6 bottom-0'}
+            className={
+              'absolute -right-6 bottom-0 origin-bottom scale-75 sm:scale-100'
+            }
             alt={
               'Photo de Gaël Guenec, préparateur physique à la Seyne-sur-Mer'
             }
@@ -35,7 +45,7 @@ export function Hero() {
 
         <div
           className={
-            'bg-hero block-shadow relative flex max-w-[60%] grow flex-col gap-5 bg-cover bg-no-repeat px-9 py-6 text-white'
+            'bg-hero block-shadow relative flex grow flex-col gap-5 bg-cover bg-top bg-no-repeat px-9 py-6 text-white transition-all duration-300 hover:bg-center lg:max-w-[60%]'
           }
         >
           <h3>Accompagnement physique à la Seyne-sur-Mer</h3>

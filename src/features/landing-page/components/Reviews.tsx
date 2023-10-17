@@ -32,7 +32,9 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section className={'grid grid-cols-4 gap-5'}>
+    <section
+      className={'flex flex-col gap-5 md:grid md:grid-cols-2 lg:grid-cols-4'}
+    >
       {reviews.map(({ username, profilePic, rate, comment }) => (
         <div className={'block-shadow rounded-xl bg-white p-9'} key={username}>
           <Image
@@ -44,7 +46,7 @@ export function Reviews() {
           />
           <h5 className={'mb-1 font-bold'}>{username}</h5>
           <div
-            className={'bg-star mb-8 block h-5 bg-repeat-x'}
+            className={'bg-star mb-8 block h-[20px] bg-repeat-x'}
             style={{ width: rate * 24 }}
           />
           <blockquote className={'font-light italic'}>

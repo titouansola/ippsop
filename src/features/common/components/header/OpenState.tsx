@@ -7,7 +7,7 @@ export function OpenState() {
   const opened = day < 6 && hours > 9.5 && hours < 19;
 
   return (
-    <div className={'invisible flex flex-col items-end gap-3 md:visible'}>
+    <div className={'hidden flex-col items-end gap-3 lg:flex'}>
       <p className={'flex items-center gap-3'}>
         <span
           className={clsx(

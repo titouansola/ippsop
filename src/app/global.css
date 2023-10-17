@@ -7,15 +7,23 @@
     @apply mb-32;
   }
 
-  nav > a,
-  nav > div {
-    @apply px-3 py-1 transition-all;
+  nav a,
+  nav .services-menu__handle {
+    @apply px-3 py-1 transition-all duration-base cursor-pointer;
   }
-  nav > a.selected {
+  nav a.selected {
     @apply bg-hint text-white;
   }
-  nav > a:not(.selected) {
+  nav a:not(.selected), nav .services-menu__handle {
     @apply hover:text-hint;
+  }
+
+  nav .services-menu:hover .services-menu__panel {
+    display: block;
+  }
+
+  nav .services-menu__panel li {
+    @apply py-1 px-4;
   }
 
   h1,
@@ -39,24 +47,28 @@
   }
 
   button {
-    @apply px-5 py-2 text-center uppercase w-fit font-black font-wide text-xl block-shadow;
+    @apply block-shadow w-fit px-5 py-2 text-center font-wide text-xl font-black uppercase;
     letter-spacing: 0.1rem;
   }
 
   button.primary {
-    @apply text-white bg-hint;
+    @apply bg-hint text-white hover:bg-hint-dark origin-center hover:scale-110 transition-all duration-base;
+  }
+
+  footer .footer-block {
+    @apply flex flex-col items-center lg:block;
   }
 
   footer h6 {
-    @apply font-bold mb-9 text-lg;
+    @apply mb-9 text-lg font-bold;
   }
 
   footer ul {
     @apply flex flex-col gap-4;
   }
 
-  footer li {
-    @apply font-light flex gap-3 items-center;
+  footer li > * {
+    @apply flex items-center sm:justify-start justify-center gap-3 font-light transition-all duration-base hover:text-hint text-white cursor-pointer;
   }
 }
 
@@ -69,7 +81,7 @@
   }
 
   .px-main {
-    @apply px-6 xl:px-25;
+    @apply px-6 md:px-16 lg:px-6 xl:px-25;
   }
 
   .block-shadow {
@@ -79,5 +91,11 @@
       27px 21px 21px 0 rgba(0, 0, 0, 0.05),
       48px 38px 24px 0 rgba(0, 0, 0, 0.01),
       75px 59px 27px 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
   }
 }

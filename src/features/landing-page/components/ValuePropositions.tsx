@@ -18,22 +18,47 @@ const content = [
 
 export function ValuePropositions() {
   return (
-    <section className={'flex gap-9 text-white'}>
+    <section className={'flex flex-col gap-9 text-white lg:flex-row'}>
       {content.map(({ title, description }) => (
-        <div key={title} className={'block-shadow grow bg-primary p-9'}>
+        <div
+          key={title}
+          className={
+            'block-shadow duration-base hover:bg-primary-dark grow origin-center bg-primary p-9 transition-all hover:scale-105'
+          }
+        >
           <h2 className={'mb-8'}>{title}</h2>
           <p>{description}</p>
         </div>
       ))}
       <div
         className={
-          'flex flex-col justify-between text-right text-2xl font-light text-secondary'
+          'hidden flex-col justify-between text-right text-2xl font-light text-secondary lg:flex'
         }
       >
-        <a href="https://www.facebook.com/preparation.ippsop">Facebook</a>
-        <a href="https://www.youtube.com/@gaelguenec2315">YouTube</a>
-        <a href="https://www.instagram.com/gaelguenec/">Instagram</a>
-        <a href="https://www.linkedin.com/company/ippsop/about/">LinkedIn</a>
+        <a
+          className={'duration-base transition-all hover:text-primary'}
+          href="https://www.facebook.com/preparation.ippsop"
+        >
+          Facebook
+        </a>
+        <a
+          className={'duration-base transition-all hover:text-primary'}
+          href="https://www.youtube.com/@gaelguenec2315"
+        >
+          YouTube
+        </a>
+        <a
+          className={'duration-base transition-all hover:text-primary'}
+          href="https://www.instagram.com/gaelguenec/"
+        >
+          Instagram
+        </a>
+        <a
+          className={'duration-base transition-all hover:text-primary'}
+          href="https://www.linkedin.com/company/ippsop/about/"
+        >
+          LinkedIn
+        </a>
       </div>
     </section>
   );

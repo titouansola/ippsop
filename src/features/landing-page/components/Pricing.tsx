@@ -30,13 +30,17 @@ const pricings = [
 export function Pricing() {
   return (
     <section>
-      <div className={'mb-14 grid grid-cols-4 gap-6 text-center text-white'}>
+      <div
+        className={
+          'mb-14 flex flex-col gap-6 text-center text-white md:grid md:grid-cols-2 lg:grid-cols-4'
+        }
+      >
         {pricings.map(({ title, background, value, description }) => (
           <div
             key={title}
             className={clsx(
-              'flex flex-col justify-between gap-14 px-6 py-6',
-              background
+              background,
+              'duration-base hover:bg-primary-transparent flex origin-center flex-col justify-between gap-14 bg-transparent bg-cover bg-center px-6 py-6 bg-blend-overlay transition-all hover:scale-105'
             )}
           >
             <div>
@@ -51,7 +55,12 @@ export function Pricing() {
         Pour toutes demandes particulières (préparation spécifique, formations,
         conférences, entreprises),
         <br />
-        <a href="" className={'font-medium underline'}>
+        <a
+          href=""
+          className={
+            'duration-base font-medium underline transition-all hover:text-hint'
+          }
+        >
           contactez-moi pour obtenir un devis.
         </a>
       </p>

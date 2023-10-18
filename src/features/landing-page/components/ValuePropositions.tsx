@@ -18,7 +18,11 @@ const content = [
 
 export function ValuePropositions() {
   return (
-    <section className={'flex flex-col gap-9 text-white lg:flex-row'}>
+    <section
+      className={
+        'animate-fade-in-slide-up flex flex-col gap-9 text-white lg:flex-row'
+      }
+    >
       {content.map(({ title, description }) => (
         <div
           key={title}

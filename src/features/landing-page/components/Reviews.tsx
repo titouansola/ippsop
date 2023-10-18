@@ -36,7 +36,12 @@ export function Reviews() {
       className={'flex flex-col gap-5 md:grid md:grid-cols-2 lg:grid-cols-4'}
     >
       {reviews.map(({ username, profilePic, rate, comment }) => (
-        <div className={'block-shadow rounded-xl bg-white p-9'} key={username}>
+        <div
+          className={
+            'block-shadow display-on-scroll h-fit rounded-xl bg-white p-9'
+          }
+          key={username}
+        >
           <Image
             src={`/img/${profilePic}`}
             alt={username}

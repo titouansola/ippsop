@@ -92,6 +92,14 @@
       48px 38px 24px 0 rgba(0, 0, 0, 0.01),
       75px 59px 27px 0 rgba(0, 0, 0, 0);
   }
+
+  .display-on-scroll {
+    @apply opacity-0 translate-y-1/2 transition-all duration-1000;
+  }
+
+  .scroll-visible {
+    @apply opacity-100 translate-y-0;
+  }
 }
 
 @media (max-width: 400px) {

@@ -12,7 +12,7 @@ export function Schedule() {
   return (
     <ul
       className={
-        'flex h-72 grow flex-col justify-between text-xl font-normal sm:h-full'
+        'display-on-scroll flex h-72 grow flex-col justify-between text-xl font-normal sm:h-full'
       }
     >
       {schedule.map(({ day, time }) => (

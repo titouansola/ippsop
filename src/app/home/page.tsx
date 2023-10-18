@@ -3,6 +3,7 @@ import { ValuePropositions } from '@ippsop/features/landing-page/components/Valu
 import { MainInformation } from '@ippsop/features/landing-page/components/MainInformation';
 import { Pricing } from '@ippsop/features/landing-page/components/Pricing';
 import { Reviews } from '@ippsop/features/landing-page/components/Reviews';
+import { HandleScroll } from '@ippsop/features/common/components/HandleScroll';
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       <MainInformation />
       <Pricing />
       <Reviews />
+      <HandleScroll />
     </>
   );
 }

@@ -5,7 +5,11 @@ export function MainInformation() {
   return (
     <section className={'flex flex-col gap-9 sm:flex-row'}>
       <div className={'flex flex-col gap-9 sm:w-1/2'}>
-        <div className={'block-shadow bg-black px-9 py-6 text-white'}>
+        <div
+          className={
+            'block-shadow display-on-scroll bg-black px-9 py-6 text-white'
+          }
+        >
           <h3 className={'mb-6'}>Espace Coralia</h3>
           <p>
             Salle de sport à la Seyne-sur-Mer tout équipée, adapté à la
@@ -17,7 +21,7 @@ export function MainInformation() {
           <Schedule />
           <div
             className={
-              'bg-schedule block-shadow hidden h-full w-1/3 bg-cover bg-center bg-no-repeat lg:block'
+              'bg-schedule block-shadow display-on-scroll hidden h-full w-1/3 bg-cover bg-center bg-no-repeat lg:block'
             }
           />
         </div>
@@ -25,7 +29,9 @@ export function MainInformation() {
       <div className={'flex flex-col gap-9 sm:w-1/2'}>
         <GoogleMap />
         <div
-          className={'block-shadow relative bg-black px-9 pb-9 pt-6 text-white'}
+          className={
+            'block-shadow display-on-scroll relative bg-black px-9 pb-9 pt-6 text-white'
+          }
         >
           <h3 className={'mb-6'}>Foire aux questions</h3>
           <p>

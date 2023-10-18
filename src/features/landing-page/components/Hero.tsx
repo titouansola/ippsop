@@ -12,7 +12,7 @@ export function Hero() {
       </h1>
       <div
         className={
-          'animate-fade-in-slide-up flex flex-col gap-14 lg:flex-row-reverse'
+          'animate-fade-in-slide-down flex flex-col gap-14 lg:flex-row-reverse'
         }
       >
         <div

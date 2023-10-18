@@ -12,6 +12,7 @@ export async function OpeningState() {
   const client = getClient();
   const schedules = await client.fetch<Schedule[]>("*[_type == 'schedule']");
   const date = new Date();
+  console.log(date.toUTCString(), date.getTimezoneOffset());
   const today = weekdays[date.getDay() - 1];
   const currentTiming = date.getHours() + date.getMinutes() / 60;
   const daySchedule = schedules.find(({ day }) => day === today);

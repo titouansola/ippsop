@@ -1,17 +1,10 @@
 import Link from 'next/link';
-import { headers } from 'next/headers';
 import clsx from 'clsx';
 
 export function Navbar() {
-  const headersList = headers();
-  const referer = headersList.get('referer');
-  const home = !!referer?.match('home') ?? false;
-  const conferences = !!referer?.match('conferences') ?? false;
-  const contact = !!referer?.match('contact') ?? false;
-
   return (
     <nav className={'absolute-centered hidden gap-2 lg:flex'}>
-      <Link href={'/home'} className={clsx(home && 'selected')}>
+      <Link href={'/'} className={'home'}>
         ACCUEIL
       </Link>
       <div className={'services-menu relative'}>
@@ -39,26 +32,26 @@ export function Navbar() {
         >
           <ul>
             <li>
-              <a>Préparation physique</a>
+              <a href={'/services/preparation-physique'}>
+                Préparation physique
+              </a>
             </li>
             <li>
-              <a>Coaching sportif</a>
+              <a href={'/services/coaching-sportif'}>Coaching sportif</a>
             </li>
             <li>
-              <a>Accompagnement thérapeutique</a>
+              <a href={'/services/accompagnement-therapeutique'}>
+                Accompagnement thérapeutique
+              </a>
             </li>
             <li>
-              <a>Entreprises</a>
+              <a href={'/services/entreprises'}>Entreprises</a>
             </li>
           </ul>
         </div>
       </div>
-      <Link href={'/conferences'} className={clsx(conferences && 'selected')}>
-        CONFÉRENCES
-      </Link>
-      <Link href={'/contact'} className={clsx(contact && 'selected')}>
-        CONTACT
-      </Link>
+      <Link href={'/conferences'}>CONFÉRENCES</Link>
+      <Link href={'/contact'}>CONTACT</Link>
     </nav>
   );
 }

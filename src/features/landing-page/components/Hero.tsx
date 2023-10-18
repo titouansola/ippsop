@@ -31,7 +31,7 @@ export function Hero() {
             Enseignant en Activité Physique Adaptée et Santé
           </p>
           <Image
-            src={'/img/gael.png'}
+            src={'/img/illustrations/gael.png'}
             width={192}
             height={376}
             className={

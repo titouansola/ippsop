@@ -11,10 +11,10 @@
   nav .services-menu__handle {
     @apply px-3 py-1 transition-all duration-base cursor-pointer;
   }
-  nav a.selected {
+  nav a.home {
     @apply bg-hint text-white;
   }
-  nav a:not(.selected), nav .services-menu__handle {
+  nav a:not(.home), nav .services-menu__handle {
     @apply hover:text-hint;
   }
 

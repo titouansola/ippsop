@@ -43,7 +43,7 @@ export function Reviews() {
           key={username}
         >
           <Image
-            src={`/img/${profilePic}`}
+            src={`/img/reviewers/${profilePic}`}
             alt={username}
             width={60}
             height={60}

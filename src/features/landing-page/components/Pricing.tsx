@@ -19,8 +19,8 @@ export async function Pricing() {
           'display-on-scroll mb-14 flex flex-col gap-6 text-center text-white md:grid md:grid-cols-2 lg:grid-cols-4'
         }
       >
-        {pricings
-          .toSorted((a, b) => a.position - b.position)
+        {[...pricings]
+          .sort((a, b) => a.position - b.position)
           .map(({ title, background, value, description }) => (
             <div
               key={title}

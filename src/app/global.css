@@ -108,3 +108,17 @@
     font-size: 12px;
   }
 }
+
+
+.bg-price-individual {
+  background-image: url("/img/pricings/price-individual.jpg");
+}
+.bg-price-group {
+  background-image: url("/img/pricings/price-group.jpg");
+}
+.bg-price-plans {
+  background-image: url("/img/pricings/price-plans.jpg");
+}
+.bg-price-bilan {
+  background-image: url("/img/pricings/price-bilan.jpg");
+}

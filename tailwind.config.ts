@@ -33,10 +33,6 @@ const config: Config = {
       backgroundImage: {
         hero: 'url(/img/illustrations/hero.jpg)',
         schedule: 'url(/img/illustrations/main-info-illus.jpg)',
-        'price-individual': 'url(/img/pricings/price-individual.jpg)',
-        'price-group': 'url(/img/pricings/price-group.jpg)',
-        'price-plans': 'url(/img/pricings/price-plans.jpg)',
-        'price-bilan': 'url(/img/pricings/price-bilan.jpg)',
         'carousel-1': 'url(/img/carousel/carousel-1.jpg)',
         'carousel-2': 'url(/img/carousel/carousel-2.jpg)',
         'carousel-3': 'url(/img/carousel/carousel-3.jpg)',

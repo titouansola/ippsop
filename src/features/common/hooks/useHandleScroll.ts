@@ -14,6 +14,7 @@ export function useHandleScroll() {
       );
     };
     window.addEventListener('scroll', callback);
+    callback();
     return () => window.removeEventListener('scroll', callback);
   }, []);
 }

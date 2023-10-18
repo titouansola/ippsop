@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Navbar } from '@ippsop/features/common/components/header/Navbar';
-import { OpenState } from '@ippsop/features/common/components/header/OpenState';
+import { OpeningState } from '@ippsop/features/common/components/header/OpeningState';
 
 export function Header() {
   return (
@@ -10,14 +10,14 @@ export function Header() {
       }
     >
       <Image
-        src={'/logo.png'}
+        src={'/img/logo.png'}
         alt={'IPPSOP Logo'}
         width={192}
         height={55}
         className={'origin-top-left scale-75 sm:scale-100'}
       />
       <Navbar />
-      <OpenState />
+      <OpeningState />
     </header>
   );
 }

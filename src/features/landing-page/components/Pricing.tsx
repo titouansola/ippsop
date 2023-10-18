@@ -16,7 +16,7 @@ export async function Pricing() {
     <section>
       <div
         className={
-          'display-on-scroll mb-14 flex flex-col gap-6 text-center text-white md:grid md:grid-cols-2 lg:grid-cols-4'
+          ' mb-14 flex flex-col gap-6 text-center text-white md:grid md:grid-cols-2 lg:grid-cols-4'
         }
       >
         {[...pricings]
@@ -26,7 +26,7 @@ export async function Pricing() {
               key={title}
               className={clsx(
                 background,
-                'duration-base hover:bg-primary-transparent flex origin-center flex-col justify-between gap-14 bg-transparent bg-cover bg-center px-6 py-6 bg-blend-overlay transition-all hover:scale-105'
+                'duration-base hover:bg-primary-transparent display-on-scroll flex origin-center flex-col justify-between gap-14 bg-transparent bg-cover bg-center px-6 py-6 bg-blend-overlay transition-all hover:scale-105'
               )}
             >
               <div>

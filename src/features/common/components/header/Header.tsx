@@ -14,7 +14,7 @@ export function Header() {
         alt={'IPPSOP Logo'}
         width={192}
         height={55}
-        className={'origin-top-left scale-75 sm:scale-100'}
+        className={'h-auto w-[144px] sm:w-auto'}
       />
       <Navbar />
       <OpeningState />

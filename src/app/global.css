@@ -7,24 +7,42 @@
     @apply mb-32;
   }
 
+  nav {
+    @apply lg:absolute-centered max-lg:absolute max-lg:left-0 max-lg:w-full flex lg:gap-2 max-lg:bg-white max-lg:flex-col max-lg:text-center max-lg:px-10 z-50;
+  }
+
+  nav:not(.nav-opened) {
+    @apply max-lg:hidden;
+  }
+  nav.nav-opened {
+    @apply max-lg:top-full;
+  }
   nav a,
   nav .services-menu__handle {
-    @apply duration-base cursor-pointer px-3 py-1 transition-all;
+    @apply lg:duration-base lg:cursor-pointer lg:px-3 lg:py-1 lg:transition-all max-lg:py-4;
+  }
+  nav a:not(:last-child),
+  nav .services-menu__handle {
+    @apply max-lg:border-b;
   }
   nav a.home {
-    @apply bg-hint text-white;
+    @apply lg:bg-hint lg:text-white;
   }
   nav a:not(.home),
   nav .services-menu__handle {
-    @apply hover:text-hint;
+    @apply lg:hover:text-hint;
   }
 
   nav .services-menu:hover .services-menu__panel {
-    display: block;
+    @apply lg:block;
+  }
+
+  nav .services-menu .services-menu__panel.services-opened {
+    @apply max-lg:block;
   }
 
   nav .services-menu__panel li {
-    @apply px-4 py-1;
+    @apply lg:px-4 lg:py-1 max-lg:py-4;
   }
 
   h1,
@@ -109,16 +127,15 @@
   }
 }
 
-
 .bg-price-individual {
-  background-image: url("/img/pricings/price-individual.jpg");
+  background-image: url('/img/pricings/price-individual.jpg');
 }
 .bg-price-group {
-  background-image: url("/img/pricings/price-group.jpg");
+  background-image: url('/img/pricings/price-group.jpg');
 }
 .bg-price-plans {
-  background-image: url("/img/pricings/price-plans.jpg");
+  background-image: url('/img/pricings/price-plans.jpg');
 }
 .bg-price-bilan {
-  background-image: url("/img/pricings/price-bilan.jpg");
+  background-image: url('/img/pricings/price-bilan.jpg');
 }

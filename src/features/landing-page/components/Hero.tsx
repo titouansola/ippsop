@@ -3,13 +3,10 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <section>
-      <h1
-        className={
-          'animate-fade-in my-32 w-full text-center text-5xl sm:text-8xl'
-        }
-      >
-        Préparateur physique spécialisé
-      </h1>
+      <div className={'animate-fade-in mb-52 mt-60 w-full text-center'}>
+        <h1 className={'text-5xl sm:text-9xl'}>Salle de sport privée</h1>
+        <p className={'text-2xl'}>La Seyne-sur-Mer</p>
+      </div>
       <div
         className={
           'animate-fade-in-slide-down flex flex-col gap-14 lg:flex-row-reverse'
@@ -31,7 +28,11 @@ export function Hero() {
             Enseignant en Activité Physique Adaptée et Santé
           </p>
           <div className={'absolute -right-6 bottom-0 origin-bottom'}>
-            <div className={'relative h-[376px] w-[192px]'}>
+            <div
+              className={
+                'relative h-[286px] w-[162px] sm:h-[376px] sm:w-[192px]'
+              }
+            >
               <Image
                 src={'/img/illustrations/gael.png'}
                 className={'object-contain'}
@@ -49,7 +50,7 @@ export function Hero() {
             'bg-hero block-shadow relative flex grow flex-col gap-5 bg-cover bg-top bg-no-repeat px-9 py-6 text-white transition-all duration-300 hover:bg-center lg:max-w-[60%]'
           }
         >
-          <h3>Accompagnement physique à la Seyne-sur-Mer</h3>
+          <h3>Santé et optimisation des performances</h3>
           <p>
             Suivi personnalisé, mon objectif et de vous faire atteindre les
             vôtres ! Spécialisé en préparation physique et activité physique

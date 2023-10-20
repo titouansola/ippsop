@@ -19,7 +19,7 @@ export async function Schedule() {
         return (
           <li
             className={
-              'relative flex justify-between after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-full after:bg-black last:after:hidden sm:after:-bottom-4'
+              'relative flex justify-between after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-full after:bg-black last:after:hidden sm:after:-bottom-2'
             }
             key={currentDay}
           >

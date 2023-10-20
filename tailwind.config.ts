@@ -9,7 +9,7 @@ const config: Config = {
         body: ['var(--font-satoshi)'],
       },
       maxWidth: {
-        content: '1440px',
+        content: '1720px',
       },
       spacing: {
         '25': '6.25rem',

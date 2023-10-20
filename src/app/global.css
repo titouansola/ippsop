@@ -121,12 +121,6 @@
   }
 }
 
-@media (max-width: 400px) {
-  html {
-    font-size: 12px;
-  }
-}
-
 .bg-price-individual {
   background-image: url('/img/pricings/price-individual.jpg');
 }

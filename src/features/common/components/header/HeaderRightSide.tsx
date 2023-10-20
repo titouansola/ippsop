@@ -24,10 +24,11 @@ export async function HeaderRightSide() {
   const schedules = await client.fetch<Schedule[]>("*[_type == 'schedule']");
 
   return (
-    <div className={'hidden flex-col items-end gap-3 lg:flex'}>
+    <div className={'hidden flex-col items-end gap-1 lg:flex'}>
       <p className={'flex h-6 items-center gap-3'}>
         <OpeningState schedules={schedules} />
       </p>
+      <p>Sur rendez-vous</p>
       <a
         href={'https://maps.app.goo.gl/EpTVGaXKd1vXddZVA'}
         target={'_blank'}

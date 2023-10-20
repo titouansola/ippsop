@@ -13,12 +13,17 @@ export default function OpeningState({ schedules }: Props) {
   const today = weekdays[date.getDay() - 1];
   const currentTiming = date.getHours() + date.getMinutes() / 60;
   const daySchedule = schedules.find(({ day }) => day === today);
+
   if (!daySchedule) {
     throw new Error("Unable to find today's schedule");
   }
-  const opensAt = convertHoursToNumber(daySchedule.opensAt);
-  const closesAt = convertHoursToNumber(daySchedule.closesAt);
-  const opened = opensAt < currentTiming && currentTiming < closesAt;
+
+  let opened = false;
+  if (daySchedule.opened) {
+    const opensAt = convertHoursToNumber(daySchedule.opensAt);
+    const closesAt = convertHoursToNumber(daySchedule.closesAt);
+    opened = opensAt < currentTiming && currentTiming < closesAt;
+  }
 
   return (
     <>

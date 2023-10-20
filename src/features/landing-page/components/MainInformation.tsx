@@ -12,9 +12,10 @@ export function MainInformation() {
         >
           <h3 className={'mb-6'}>Espace Coralia</h3>
           <p>
-            Salle de sport à la Seyne-sur-Mer tout équipée, adapté à la
-            préparation physique, la remise en forme ou l’accompagnement
-            thérapeutique.
+            La salle de sport est située à La Seyne-sur-Mer, à coté du magasin
+            Botanic®. L’espace peut accueillir 3 personnes maximum pour assurer
+            la personnalisation des exercices et garantir un encadrement
+            privilégié.
           </p>
         </div>
         <div className={'flex grow justify-between gap-9'}>
@@ -33,18 +34,19 @@ export function MainInformation() {
             'block-shadow display-on-scroll relative bg-black px-9 pb-9 pt-6 text-white'
           }
         >
-          <h3 className={'mb-6'}>Foire aux questions</h3>
+          <h3 className={'mb-6'}>Une question ?</h3>
           <p>
-            La FAQ est là pour répondre à toutes les questions récurentes.
+            La foire aux questions est là pour vous répondre !
             <br />
             Si malgré tout une information vous manque, vous pouvez directement
-            me contacter !
+            nous contacter !
           </p>
-          <button
-            className={'primary absolute -bottom-0 right-9 translate-y-1/2'}
+          <a
+            href="/foire-aux-questions"
+            className={'absolute -bottom-0 right-9 translate-y-1/2'}
           >
-            Me contacter
-          </button>
+            <button className={'primary'}>Voir la FAQ</button>
+          </a>
         </div>
       </div>
     </section>

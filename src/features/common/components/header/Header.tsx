@@ -7,7 +7,7 @@ export async function Header({ services }: { services: ServicePageContent[] }) {
   return (
     <header
       className={
-        'px-main animate-fade-in-slide-down relative flex h-25 items-center justify-between'
+        'px-main animate-fade-in-slide-down fixed top-0 z-50 flex w-full items-center justify-between bg-black py-4 lg:text-white'
       }
     >
       <div className={'relative h-auto min-h-[50px] w-[144px] sm:w-[192px]'}>

@@ -16,7 +16,10 @@ export function Navbar({ services }: { services: ServicePageContent[] }) {
 
   return (
     <>
-      <div className={'p-3 lg:hidden'} onClick={() => setNavOpened(!navOpened)}>
+      <div
+        className={'p-3 text-white lg:hidden'}
+        onClick={() => setNavOpened(!navOpened)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="2em"
@@ -39,7 +42,7 @@ export function Navbar({ services }: { services: ServicePageContent[] }) {
             }
             onClick={() => setServicesOpened(!servicesOpened)}
           >
-            SERVICES
+            PRESTATIONS
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="1em"
@@ -53,7 +56,7 @@ export function Navbar({ services }: { services: ServicePageContent[] }) {
           </span>
           <div
             className={clsx(
-              'services-menu__panel lg:block-shadow hidden py-2 lg:absolute lg:w-fit lg:whitespace-nowrap lg:bg-white',
+              'services-menu__panel lg:block-shadow hidden py-2 text-black lg:absolute lg:w-fit lg:whitespace-nowrap lg:bg-white',
               servicesOpened && 'services-opened'
             )}
           >

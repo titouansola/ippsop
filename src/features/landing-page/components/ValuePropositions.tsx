@@ -1,18 +1,18 @@
 const content = [
   {
-    title: 'Préparation',
+    title: 'Santé',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Il est aujourd’hui largement démontré que l’activité physique est une thérapie non médicamenteuse. 20 à 30 % des cancers, maladies cardio-vasculaires, diabète ou AVC pourrait être évités en pratiquant plus de sport ! Venez pratiquer en toute sécurité et de façon adaptée avec un enseignant en Activités Physiques Adaptées.',
   },
   {
     title: 'Coaching',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Vous recherchez un programme sur mesure et un accompagnement de qualité pour vous remettre en forme et faire le plein d’énergie ? Alors n’hésitez pas à venir vous entraîner dans une salle à taille humaine de façon personnalisée et dans la bonne humeur avec votre entraîneur toujours là pour vous motiver !',
   },
   {
-    title: 'Santé',
+    title: 'Préparation',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Vous souhaitez optimiser vos performances sportives, courir votre 1 er marathon, réussir vos épreuves physiques lors d’un concours, retrouver votre niveau après blessures ? Que vous soyez un sportif amateur ou de haut niveau, de sport individuel ou collectif, venez vous préparer comme un vrai pro avec les méthodes d’entraînement qui ont fait leurs preuves.',
   },
 ];
 

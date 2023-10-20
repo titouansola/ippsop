@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Navbar } from '@ippsop/features/common/components/header/Navbar';
-import { OpeningState } from '@ippsop/features/common/components/header/OpeningState';
+import { HeaderRightSide } from '@ippsop/features/common/components/header/HeaderRightSide';
 
 export function Header() {
   return (
@@ -17,7 +17,7 @@ export function Header() {
         className={'h-auto w-[144px] sm:w-auto'}
       />
       <Navbar />
-      <OpeningState />
+      <HeaderRightSide />
     </header>
   );
 }

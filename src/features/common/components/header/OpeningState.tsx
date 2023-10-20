@@ -1,18 +1,16 @@
-import clsx from 'clsx';
-import { getClient } from '@ippsop/lib/sanity.client';
+'use client';
+
 import { Schedule, Timing } from '@ippsop/lib/models/schedule';
 import { weekdays } from '@ippsop/lib/models/weekdays';
-import { logger } from '@ippsop/lib/logger';
+import clsx from 'clsx';
 
-function convertHoursToNumber(timing: Timing) {
-  const [hours, minutes] = timing.split('h');
-  return parseInt(hours) + parseInt(minutes) / 60;
-}
+type Props = {
+  schedules: Schedule[];
+};
 
-export async function OpeningState() {
-  const client = getClient();
-  const schedules = await client.fetch<Schedule[]>("*[_type == 'schedule']");
+export function OpeningState({ schedules }: Props) {
   const date = new Date();
+  console.log(date.toString(), date.getHours());
   const today = weekdays[date.getDay() - 1];
   const currentTiming = date.getHours() + date.getMinutes() / 60;
   const daySchedule = schedules.find(({ day }) => day === today);
@@ -23,11 +21,8 @@ export async function OpeningState() {
   const closesAt = convertHoursToNumber(daySchedule.closesAt);
   const opened = opensAt < currentTiming && currentTiming < closesAt;
 
-  logger.info(date.toUTCString());
-  logger.info(date.getHours());
-
   return (
-    <div className={'hidden flex-col items-end gap-3 lg:flex'}>
+    <>
       <p className={'flex items-center gap-3'}>
         <span
           className={clsx(
@@ -42,14 +37,11 @@ export async function OpeningState() {
           </span>
         )}
       </p>
-      <a
-        href={'https://maps.app.goo.gl/EpTVGaXKd1vXddZVA'}
-        target={'_blank'}
-        className={'text-secondary underline'}
-      >
-        424 Rue de Lisbonne,
-        <br className={'block lg:hidden'} /> La Seyne-sur-Mer
-      </a>
-    </div>
+    </>
   );
+}
+
+function convertHoursToNumber(timing: Timing) {
+  const [hours, minutes] = timing.split('h');
+  return parseInt(hours) + parseInt(minutes) / 60;
 }

@@ -1,4 +1,6 @@
-export function Footer() {
+import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
+
+export function Footer({ services }: { services: ServicePageContent[] }) {
   return (
     <footer
       className={
@@ -9,7 +11,7 @@ export function Footer() {
         <h6>Gaël Guenec</h6>
         <ul>
           <li>
-            <span>
+            <a href={'https://wa.me/+33622676909'}>
               <svg
                 width="22"
                 height="22"
@@ -30,10 +32,13 @@ export function Footer() {
                 </defs>
               </svg>
               06 22 67 69 09
-            </span>
+            </a>
           </li>
           <li>
-            <span>
+            <a
+              href={'https://maps.app.goo.gl/EpTVGaXKd1vXddZVA'}
+              target={'_blank'}
+            >
               <svg
                 width="24"
                 height="24"
@@ -56,10 +61,10 @@ export function Footer() {
               424 rue de Lisbonne
               <br />
               La Seyne-sur-Mer
-            </span>
+            </a>
           </li>
           <li>
-            <span>
+            <a href={'mailto:ippsop@gmail.com'}>
               <svg
                 width="25"
                 height="25"
@@ -73,7 +78,7 @@ export function Footer() {
                 />
               </svg>
               ippsop@gmail.com
-            </span>
+            </a>
           </li>
         </ul>
       </div>
@@ -165,31 +170,24 @@ export function Footer() {
       <div className={'footer-block'}>
         <h6>Services</h6>
         <ul>
-          <li>
-            <span>Préparation physique</span>
-          </li>
-          <li>
-            <span>Coaching sportif</span>
-          </li>
-          <li>
-            <span>Accompagnement thérapeutique</span>
-          </li>
-          <li>
-            <span>Entreprises</span>
-          </li>
+          {services.map(({ title, slug }) => (
+            <li key={slug.current}>
+              <a href={`/services/${slug.current}`}>{title}</a>
+            </li>
+          ))}
         </ul>
       </div>
       <div className={'footer-block'}>
         <h6>Liens utiles</h6>
         <ul>
           <li>
-            <span>À propos</span>
+            <a href={'/contact'}>À propos</a>
           </li>
           <li>
-            <span>Conférences / Articles</span>
+            <a href={'/conferences'}>Conférences / Articles</a>
           </li>
           <li>
-            <span>FAQ</span>
+            <a href={'/foire-aux-questions'}>FAQ</a>
           </li>
         </ul>
       </div>

@@ -30,17 +30,18 @@ export function Hero() {
             <br />
             Enseignant en Activité Physique Adaptée et Santé
           </p>
-          <Image
-            src={'/img/illustrations/gael.png'}
-            width={192}
-            height={376}
-            className={
-              'absolute -right-6 bottom-0 origin-bottom scale-75 sm:scale-100'
-            }
-            alt={
-              'Photo de Gaël Guenec, préparateur physique à la Seyne-sur-Mer'
-            }
-          />
+          <div className={'absolute -right-6 bottom-0 origin-bottom'}>
+            <div className={'relative h-[376px] w-[192px]'}>
+              <Image
+                src={'/img/illustrations/gael.png'}
+                className={'object-contain'}
+                alt={
+                  'Photo de Gaël Guenec, préparateur physique à la Seyne-sur-Mer'
+                }
+                fill
+              />
+            </div>
+          </div>
         </div>
 
         <div

@@ -30,7 +30,7 @@ export function ValuePropositions() {
             'block-shadow duration-base hover:bg-primary-dark grow origin-center bg-primary p-9 transition-all hover:scale-105'
           }
         >
-          <h2 className={'mb-8'}>{title}</h2>
+          <h2>{title}</h2>
           <p>{description}</p>
         </div>
       ))}

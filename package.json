@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
+    "@portabletext/react": "^3.0.11",
     "@sanity/client": "^6.6.0",
+    "@sanity/image-url": "^1.0.2",
     "@sanity/preview-kit": "^3.2.1",
     "@sanity/vision": "^3.18.0",
     "clsx": "^2.0.0",

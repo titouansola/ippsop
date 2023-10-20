@@ -1,22 +1,24 @@
 import Image from 'next/image';
 import { Navbar } from '@ippsop/features/common/components/header/Navbar';
 import { HeaderRightSide } from '@ippsop/features/common/components/header/HeaderRightSide';
+import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
 
-export function Header() {
+export async function Header({ services }: { services: ServicePageContent[] }) {
   return (
     <header
       className={
         'px-main animate-fade-in-slide-down relative flex h-25 items-center justify-between'
       }
     >
-      <Image
-        src={'/img/logo.png'}
-        alt={'IPPSOP Logo'}
-        width={192}
-        height={55}
-        className={'h-auto w-[144px] sm:w-auto'}
-      />
-      <Navbar />
+      <div className={'relative h-auto min-h-[50px] w-[144px] sm:w-[192px]'}>
+        <Image
+          src={'/img/logo.png'}
+          alt={'IPPSOP Logo'}
+          fill
+          className={'object-contain'}
+        />
+      </div>
+      <Navbar services={services} />
       <HeaderRightSide />
     </header>
   );

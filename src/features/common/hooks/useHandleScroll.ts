@@ -6,8 +6,8 @@ export function useHandleScroll() {
       const { innerHeight } = window;
       Array.from(document.getElementsByClassName('display-on-scroll')).forEach(
         (elt) => {
-          const { y, height } = elt.getBoundingClientRect();
-          if (y < innerHeight - height / 2) {
+          const { y } = elt.getBoundingClientRect();
+          if (y < innerHeight - 100) {
             elt.classList.add('scroll-visible');
           }
         }

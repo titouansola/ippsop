@@ -1,11 +1,13 @@
+import { PortableTextBlock } from 'sanity';
 import clsx from 'clsx';
 import { getClient } from '@ippsop/lib/sanity.client';
+import { RichText } from '@ippsop/features/common/components/RichText';
 
 type Pricing = {
   title: string;
   background: string;
   value: number;
-  description: string;
+  description: PortableTextBlock;
   position: number;
 };
 
@@ -33,7 +35,9 @@ export async function Pricing() {
                 <h4 className={'mb-6 text-xl font-black'}>{title}</h4>
                 <p className={'text-6xl font-black'}>{value}€</p>
               </div>
-              <p dangerouslySetInnerHTML={{ __html: description }}></p>
+              <div>
+                <RichText value={description} />
+              </div>
             </div>
           ))}
       </div>

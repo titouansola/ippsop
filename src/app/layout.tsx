@@ -29,7 +29,7 @@ const bebas = localFont({
 });
 
 export const metadata = {
-  title: 'IPPSOP - Gaël Guenec',
+  title: 'IPPSOP Gaël Guenec',
   description: 'Gaël Guenec, préparateur physique',
 };
 

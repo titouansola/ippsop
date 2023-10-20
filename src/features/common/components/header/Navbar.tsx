@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
 
-export function Navbar() {
+export function Navbar({ services }: { services: ServicePageContent[] }) {
   const [navOpened, setNavOpened] = useState(false);
   const [servicesOpened, setServicesOpened] = useState(false);
 
@@ -57,29 +58,13 @@ export function Navbar() {
             )}
           >
             <ul>
-              <li>
-                <a onClick={reset} href={'/services/preparation-physique'}>
-                  Préparation physique
-                </a>
-              </li>
-              <li>
-                <a onClick={reset} href={'/services/coaching-sportif'}>
-                  Coaching sportif
-                </a>
-              </li>
-              <li>
-                <a
-                  onClick={reset}
-                  href={'/services/accompagnement-therapeutique'}
-                >
-                  Accompagnement thérapeutique
-                </a>
-              </li>
-              <li>
-                <a onClick={reset} href={'/services/entreprises'}>
-                  Entreprises
-                </a>
-              </li>
+              {services.map(({ title, slug }) => (
+                <li key={slug.current}>
+                  <a href={`/services/${slug.current}`} onClick={reset}>
+                    {title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

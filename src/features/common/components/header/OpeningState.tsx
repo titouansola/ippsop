@@ -8,9 +8,8 @@ type Props = {
   schedules: Schedule[];
 };
 
-export function OpeningState({ schedules }: Props) {
+export default function OpeningState({ schedules }: Props) {
   const date = new Date();
-  console.log(date.toString(), date.getHours());
   const today = weekdays[date.getDay() - 1];
   const currentTiming = date.getHours() + date.getMinutes() / 60;
   const daySchedule = schedules.find(({ day }) => day === today);
@@ -23,20 +22,15 @@ export function OpeningState({ schedules }: Props) {
 
   return (
     <>
-      <p className={'flex items-center gap-3'}>
-        <span
-          className={clsx(
-            opened ? 'bg-green' : 'bg-red',
-            'h-3 w-3 rounded-full'
-          )}
-        />
-        <span>{opened ? 'Ouvert' : 'Fermé'}</span>
-        {daySchedule.opened && (
-          <span>
-            {daySchedule.opensAt} - {daySchedule.closesAt}
-          </span>
-        )}
-      </p>
+      <span
+        className={clsx(opened ? 'bg-green' : 'bg-red', 'h-3 w-3 rounded-full')}
+      />
+      <span>{opened ? 'Ouvert' : 'Fermé'}</span>
+      {daySchedule.opened && (
+        <span>
+          {daySchedule.opensAt} - {daySchedule.closesAt}
+        </span>
+      )}
     </>
   );
 }

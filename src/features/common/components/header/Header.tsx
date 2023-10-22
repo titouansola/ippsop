@@ -14,8 +14,10 @@ export async function Header({ services }: { services: ServicePageContent[] }) {
         <Image
           src={'/img/logo.png'}
           alt={'IPPSOP Logo'}
-          fill
           className={'object-contain'}
+          sizes={'192px (max-width: 500px) 144px'}
+          priority
+          fill
         />
       </div>
       <Navbar services={services} />

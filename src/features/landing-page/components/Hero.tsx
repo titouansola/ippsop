@@ -39,6 +39,9 @@ export function Hero() {
                 alt={
                   'Photo de Gaël Guenec, préparateur physique à la Seyne-sur-Mer'
                 }
+                quality={100}
+                sizes={'192px, (max-width: 500px) 162px'}
+                priority
                 fill
               />
             </div>

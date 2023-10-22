@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { weekdays } from '@ippsop/lib/models/weekdays';
+import { orderedWeekdays } from '@ippsop/lib/models/weekdays';
 
 export default defineType({
   name: 'schedule',
@@ -11,7 +11,7 @@ export default defineType({
       title: 'Jour',
       type: 'string',
       options: {
-        list: weekdays.map((day) => ({ title: day, value: day })),
+        list: orderedWeekdays.map((day) => ({ title: day, value: day })),
         layout: 'dropdown',
       },
       validation: (Rule) => Rule.required(),

@@ -10,7 +10,7 @@ type Props = {
 
 export default function OpeningState({ schedules }: Props) {
   const date = new Date();
-  const today = weekdays[date.getDay() - 1];
+  const today = weekdays[date.getDay()];
   const currentTiming = date.getHours() + date.getMinutes() / 60;
   const daySchedule = schedules.find(({ day }) => day === today);
 

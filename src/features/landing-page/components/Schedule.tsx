@@ -1,6 +1,6 @@
 import { getClient } from '@ippsop/lib/sanity.client';
 import { Schedule } from '@ippsop/lib/models/schedule';
-import { weekdays } from '@ippsop/lib/models/weekdays';
+import { orderedWeekdays } from '@ippsop/lib/models/weekdays';
 
 export async function Schedule() {
   const client = getClient();
@@ -11,7 +11,7 @@ export async function Schedule() {
         'display-on-scroll flex h-72 grow flex-col justify-between text-xl font-normal sm:h-full'
       }
     >
-      {weekdays.map((currentDay) => {
+      {orderedWeekdays.map((currentDay) => {
         const daySchedule = schedules.find(({ day }) => currentDay === day);
         if (!daySchedule) {
           throw new Error("Unable to find today's schedule");

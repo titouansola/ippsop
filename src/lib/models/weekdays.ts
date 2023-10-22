@@ -1,4 +1,4 @@
-export const weekdays = [
+export const orderedWeekdays = [
   'Lundi',
   'Mardi',
   'Mercredi',
@@ -6,4 +6,14 @@ export const weekdays = [
   'Vendredi',
   'Samedi',
   'Dimanche',
+] as const;
+
+export const weekdays = [
+  'Dimanche',
+  'Lundi',
+  'Mardi',
+  'Mercredi',
+  'Jeudi',
+  'Vendredi',
+  'Samedi',
 ] as const;

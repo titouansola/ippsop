@@ -24,7 +24,7 @@ export default async function Service({
   return (
     <>
       <section className={'text-lg'}>
-        <h1 className={'mt-20 text-center text-6xl'}>{pageContent.title}</h1>
+        <h1>{pageContent.title}</h1>
         <article className={'my-25'}>
           <RichText value={pageContent.content} />
         </article>

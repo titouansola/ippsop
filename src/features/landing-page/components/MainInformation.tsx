@@ -10,12 +10,12 @@ export function MainInformation() {
             'block-shadow display-on-scroll bg-black px-9 py-6 text-white'
           }
         >
-          <h3 className={'mb-6'}>Espace Coralia</h3>
+          <h3 className={'mb-6'}>Salle de sport</h3>
           <p>
-            La salle de sport est située à La Seyne-sur-Mer, à coté du magasin
-            Botanic®. L’espace peut accueillir 3 personnes maximum pour assurer
-            la personnalisation des exercices et garantir un encadrement
-            privilégié.
+            La salle de sport est située dans l&apos;espace Coralia à La
+            Seyne-sur-Mer, à coté du magasin Botanic®. L’espace peut accueillir
+            3 personnes maximum pour assurer la personnalisation des exercices
+            et garantir un encadrement privilégié.
           </p>
         </div>
         <div className={'flex grow justify-between gap-9'}>

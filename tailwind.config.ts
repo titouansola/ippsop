@@ -31,6 +31,7 @@ const config: Config = {
         base: '100ms',
       },
       backgroundImage: {
+        'main-hero': 'url(/img/illustrations/main-hero.jpg)',
         hero: 'url(/img/illustrations/hero.jpg)',
         schedule: 'url(/img/illustrations/main-info-illus.jpg)',
         'carousel-1': 'url(/img/carousel/carousel-1.jpg)',

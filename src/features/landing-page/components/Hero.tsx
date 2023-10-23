@@ -3,8 +3,14 @@ import Image from 'next/image';
 export function Hero() {
   return (
     <section>
-      <div className={'animate-fade-in mb-52 mt-60 w-full text-center'}>
-        <h1 className={'text-5xl sm:text-9xl'}>Salle de sport privée</h1>
+      <div
+        className={
+          'animate-fade-in bg-main-hero my-28 w-full bg-cover bg-center py-52 text-center text-white'
+        }
+      >
+        <h1 className={'m-0 text-5xl drop-shadow-lg sm:text-9xl'}>
+          Salle de sport privée
+        </h1>
         <p className={'text-2xl'}>La Seyne-sur-Mer</p>
       </div>
       <div

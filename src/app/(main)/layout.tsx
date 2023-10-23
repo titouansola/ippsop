@@ -13,7 +13,9 @@ export default async function Layout({ children }: PropsWithChildren) {
   return (
     <>
       <Header services={services} />
-      <main className={'px-main max-w-content mx-auto pt-32'}>{children}</main>
+      <main className={'px-main max-w-content mx-auto pt-20 lg:pt-28'}>
+        {children}
+      </main>
       <Footer services={services} />
     </>
   );

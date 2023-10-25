@@ -1,18 +1,35 @@
 import Image from 'next/image';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { getClient } from '@ippsop/lib/sanity.client';
+import { urlFor } from '@ippsop/lib/sanity-image-loader';
 
-export function Hero() {
+export async function Hero() {
+  const client = getClient();
+  const hero = (await client.fetch(`*[_type == 'hero']`))?.[0] as {
+    title: string;
+    subtitle: string;
+    background: SanityImageSource;
+  };
+
   return (
     <section>
       <div
         className={
-          'animate-fade-in bg-main-hero my-28 w-full bg-cover bg-center py-52 text-center text-white'
+          'animate-fade-in remove-px-main block-shadow relative mb-28 w-screen py-52 text-center text-white'
         }
       >
+        <Image
+          src={urlFor(hero.background).url()}
+          alt={'Hero Background'}
+          className={'-z-10 object-cover brightness-50 filter'}
+          fill
+        />
         <h1 className={'m-0 text-5xl drop-shadow-lg sm:text-9xl'}>
-          Salle de sport privée
+          {hero.title}
         </h1>
-        <p className={'text-2xl'}>La Seyne-sur-Mer</p>
+        <p className={'text-2xl'}>{hero.subtitle}</p>
       </div>
+
       <div
         className={
           'animate-fade-in-slide-down flex flex-col gap-14 lg:flex-row-reverse'
@@ -20,7 +37,7 @@ export function Hero() {
       >
         <div
           className={
-            'block-shadow relative flex flex-col gap-25 bg-black px-9 py-6 text-white lg:max-w-[40%]'
+            'block-shadow relative flex flex-col bg-black px-9 py-6 text-white sm:gap-25 lg:max-w-[40%]'
           }
         >
           <h2 className={'z-10'}>Gaël Guenec</h2>
@@ -53,9 +70,15 @@ export function Hero() {
 
         <div
           className={
-            'bg-hero block-shadow relative flex flex-col gap-5 bg-cover bg-top bg-no-repeat px-9 py-6 text-white transition-all duration-300 hover:bg-center'
+            'block-shadow relative flex flex-col gap-5 px-9 py-6 text-white transition-all duration-300'
           }
         >
+          <Image
+            src={'/img/illustrations/hero.jpg'}
+            alt={'Alt Hero Background'}
+            className={'-z-10 object-cover'}
+            fill
+          />
           <h3>Santé et optimisation des performances</h3>
           <p>
             Atteignez vos objectifs grâce à l’accompagnement personnalisé de
@@ -63,7 +86,9 @@ export function Hero() {
             <br />
             Plus de 10 ans d’expérience au service du plus grand nombre.
           </p>
-          <button className={'primary'}>Obtenir un rendez-vous</button>
+          <a href="/contact">
+            <button className={'primary'}>Obtenir un rendez-vous</button>
+          </a>
         </div>
       </div>
     </section>

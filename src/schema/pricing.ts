@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'pricing',
@@ -22,7 +22,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [defineArrayMember({ type: 'block' })],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -33,12 +33,10 @@ export default defineType({
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
-      name: 'background',
-      title: 'Background',
-      type: 'string',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
       validation: (Rule) => Rule.required(),
-      hidden: ({ currentUser }) =>
-        !currentUser?.roles.find(({ name }) => name === 'administrator'),
     }),
   ],
 });

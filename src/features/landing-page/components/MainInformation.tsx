@@ -1,5 +1,6 @@
 import { GoogleMap } from '@ippsop/features/ui/GoogleMap';
 import { Schedule } from '@ippsop/features/landing-page/components/Schedule';
+import Image from 'next/image';
 
 export function MainInformation() {
   return (
@@ -22,9 +23,16 @@ export function MainInformation() {
           <Schedule />
           <div
             className={
-              'bg-schedule block-shadow display-on-scroll hidden h-full w-1/3 bg-cover bg-center bg-no-repeat lg:block'
+              'block-shadow display-on-scroll relative hidden h-full w-1/3 lg:block'
             }
-          />
+          >
+            <Image
+              src={'/img/illustrations/main-info-illus.jpg'}
+              alt={'Illustration'}
+              className={'object-cover'}
+              fill
+            />
+          </div>
         </div>
       </div>
       <div className={'flex flex-col gap-9 sm:w-1/2'}>

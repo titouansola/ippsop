@@ -31,15 +31,6 @@ const config: Config = {
         base: '100ms',
       },
       backgroundImage: {
-        'main-hero': 'url(/img/illustrations/main-hero.jpg)',
-        hero: 'url(/img/illustrations/hero.jpg)',
-        schedule: 'url(/img/illustrations/main-info-illus.jpg)',
-        'carousel-1': 'url(/img/carousel/carousel-1.jpg)',
-        'carousel-2': 'url(/img/carousel/carousel-2.jpg)',
-        'carousel-3': 'url(/img/carousel/carousel-3.jpg)',
-        'carousel-4': 'url(/img/carousel/carousel-4.jpg)',
-        'carousel-5': 'url(/img/carousel/carousel-5.jpg)',
-        'carousel-6': 'url(/img/carousel/carousel-6.png)',
         star: "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.44 19'><polygon fill='%23fdd663' points='10,15.27 16.18,19 14.54,11.97 20,7.24 12.81,6.63 10,0 7.19,6.63 0,7.24 5.46,11.97 3.82,19'/></svg>\")",
       },
       animation: {

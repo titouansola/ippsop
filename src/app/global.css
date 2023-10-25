@@ -103,6 +103,10 @@
     @apply px-6 md:px-16 lg:px-6 xl:px-25;
   }
 
+  .remove-px-main {
+    @apply -mx-6 md:-mx-16 lg:-mx-6 xl:-mx-25;
+  }
+
   .block-shadow {
     box-shadow:
       3px 2px 8px 0 rgba(0, 0, 0, 0.1),
@@ -119,17 +123,4 @@
   .scroll-visible {
     @apply translate-y-0 opacity-100;
   }
-}
-
-.bg-price-individual {
-  background-image: url('/img/pricings/price-individual.jpg');
-}
-.bg-price-group {
-  background-image: url('/img/pricings/price-group.jpg');
-}
-.bg-price-plans {
-  background-image: url('/img/pricings/price-plans.jpg');
-}
-.bg-price-bilan {
-  background-image: url('/img/pricings/price-bilan.jpg');
 }

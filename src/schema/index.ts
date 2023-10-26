@@ -6,8 +6,17 @@ import schedule from './schedule';
 import services from './services';
 import carousel from './carousel';
 import hero from './hero';
+import article from './article';
 
-export const schemaTypes = [pricing, qna, schedule, services, carousel, hero];
+export const schemaTypes = [
+  pricing,
+  qna,
+  schedule,
+  services,
+  carousel,
+  hero,
+  article,
+];
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [...schemaTypes],
 };

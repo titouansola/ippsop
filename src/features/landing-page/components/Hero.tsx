@@ -12,85 +12,21 @@ export async function Hero() {
   };
 
   return (
-    <section>
-      <div
-        className={
-          'animate-fade-in remove-px-main block-shadow relative mb-28 w-screen py-52 text-center text-white'
-        }
-      >
-        <Image
-          src={urlFor(hero.background).url()}
-          alt={'Hero Background'}
-          className={'-z-10 object-cover brightness-50 filter'}
-          fill
-        />
-        <h1 className={'m-0 text-5xl drop-shadow-lg sm:text-9xl'}>
-          {hero.title}
-        </h1>
-        <p className={'text-2xl'}>{hero.subtitle}</p>
-      </div>
-
-      <div
-        className={
-          'animate-fade-in-slide-down flex flex-col gap-14 lg:flex-row-reverse'
-        }
-      >
-        <div
-          className={
-            'block-shadow relative flex flex-col bg-black px-9 py-6 text-white sm:gap-25 lg:max-w-[40%]'
-          }
-        >
-          <h2 className={'z-10'}>Gaël Guenec</h2>
-          <p className={'z-10'}>
-            Professionnel diplômé d’un Master et de deux Licences STAPS ainsi
-            que du Certificat d’Éducation Thérapeutique du Patient, je suis à la
-            fois préparateur physique, enseignant en Activité Physique Adaptée,
-            coach sportif, formateur et conférencier
-          </p>
-          <div className={'absolute -right-6 bottom-0 origin-bottom'}>
-            <div
-              className={
-                'relative h-[286px] w-[162px] sm:h-[376px] sm:w-[192px]'
-              }
-            >
-              <Image
-                src={'/img/illustrations/gael.png'}
-                className={'object-contain'}
-                alt={
-                  'Photo de Gaël Guenec, préparateur physique à la Seyne-sur-Mer'
-                }
-                quality={100}
-                sizes={'192px, (max-width: 500px) 162px'}
-                priority
-                fill
-              />
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={
-            'block-shadow relative flex flex-col gap-5 px-9 py-6 text-white transition-all duration-300'
-          }
-        >
-          <Image
-            src={'/img/illustrations/hero.jpg'}
-            alt={'Alt Hero Background'}
-            className={'-z-10 object-cover'}
-            fill
-          />
-          <h3>Santé et optimisation des performances</h3>
-          <p>
-            Atteignez vos objectifs grâce à l’accompagnement personnalisé de
-            votre coach spécialisé en Sport-Santé et Préparation Physique.
-            <br />
-            Plus de 10 ans d’expérience au service du plus grand nombre.
-          </p>
-          <a href="/contact">
-            <button className={'primary'}>Obtenir un rendez-vous</button>
-          </a>
-        </div>
-      </div>
+    <section
+      className={
+        'animate-fade-in block-shadow relative mb-28 mt-20 py-52 text-center text-white lg:mt-28'
+      }
+    >
+      <Image
+        src={urlFor(hero.background).url()}
+        alt={'Hero Background'}
+        className={'-z-10 object-cover brightness-50 filter'}
+        fill
+      />
+      <h1 className={'m-0 text-5xl drop-shadow-lg sm:text-9xl'}>
+        {hero.title}
+      </h1>
+      <p className={'text-2xl'}>{hero.subtitle}</p>
     </section>
   );
 }

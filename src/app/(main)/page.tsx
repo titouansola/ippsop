@@ -1,4 +1,5 @@
 import { Hero } from '@ippsop/features/landing-page/components/Hero';
+import SubHero from '@ippsop/features/landing-page/components/SubHero';
 import { ValuePropositions } from '@ippsop/features/landing-page/components/ValuePropositions';
 import { MainInformation } from '@ippsop/features/landing-page/components/MainInformation';
 import { Carousel } from '@ippsop/features/landing-page/components/Carousel';
@@ -8,14 +9,17 @@ import { HandleScroll } from '@ippsop/features/common/components/HandleScroll';
 
 export default function HomePage() {
   return (
-    <>
+    <main>
       <Hero />
-      <ValuePropositions />
-      <MainInformation />
-      <Carousel />
-      <Pricing />
-      <Reviews />
-      <HandleScroll />
-    </>
+      <div className={'px-main max-w-content mx-auto'}>
+        <SubHero />
+        <ValuePropositions />
+        <MainInformation />
+        <Carousel />
+        <Pricing />
+        <Reviews />
+        <HandleScroll />
+      </div>
+    </main>
   );
 }

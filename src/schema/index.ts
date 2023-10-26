@@ -7,6 +7,7 @@ import services from './services';
 import carousel from './carousel';
 import hero from './hero';
 import article from './article';
+import uvp from './uvp';
 
 export const schemaTypes = [
   pricing,
@@ -16,6 +17,7 @@ export const schemaTypes = [
   carousel,
   hero,
   article,
+  uvp,
 ];
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [...schemaTypes],

@@ -1,39 +1,47 @@
-const content = [
-  {
-    title: 'Santé',
-    description:
-      'Vous avez des problèmes articulaires (dos, genoux, hanches...), des pathologies chroniques (cardiaques, obésité, diabète...) ou tout simplement un âge avancé et vous ne savez pas comment pratiquer du sport en toute sécurité ?',
-  },
-  {
-    title: 'Coaching',
-    description:
-      'Vous recherchez un programme sur mesure et un accompagnement de qualité pour vous remettre en forme, travailler votre silhouette et faire le plein d’énergie ?',
-  },
-  {
-    title: 'Préparation',
-    description:
-      'Vous souhaitez un préparateur physique personnel afin d’améliorer vos performances, vous remettre d’une blessure, préparer un concours ou évaluer vos capacités ?',
-  },
-];
+import Image from 'next/image';
+import { getClient } from '@ippsop/lib/sanity.client';
+import { UVP } from '@ippsop/lib/models/uvp';
+import { urlFor } from '@ippsop/lib/sanity-image-loader';
 
-export function ValuePropositions() {
+export async function ValuePropositions() {
+  const client = getClient();
+  const uvps = await client.fetch<UVP[]>(`*[_type == 'uvp']`);
   return (
     <section
       className={
         'animate-fade-in-slide-up flex flex-col gap-9 text-white lg:flex-row'
       }
     >
-      {content.map(({ title, description }) => (
-        <div
-          key={title}
-          className={
-            'block-shadow duration-base hover:bg-primary-dark grow origin-center bg-primary p-9 transition-all hover:scale-105'
-          }
-        >
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
-      ))}
+      {uvps
+        .sort((a, b) => a.position - b.position)
+        .map(({ title, content, background }) => (
+          <div
+            key={title}
+            className={
+              'block-shadow duration-base relative grow origin-center p-9 transition-all hover:scale-105'
+            }
+          >
+            <div
+              className={
+                'absolute left-0 top-0 -z-10 h-full w-full bg-primary opacity-70 mix-blend-color'
+              }
+            />
+            <div
+              className={
+                'absolute left-0 top-0 -z-20 h-full w-full bg-black opacity-80'
+              }
+            />
+            <Image
+              src={urlFor(background).url()}
+              alt={'background'}
+              className={'-z-30 object-cover filter'}
+              fill
+            />
+            <h2>{title}</h2>
+            <p>{content}</p>
+          </div>
+        ))}
+
       <div
         className={
           'hidden flex-col justify-between text-right text-2xl font-light text-secondary lg:flex'

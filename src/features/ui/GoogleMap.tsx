@@ -31,8 +31,8 @@ export const GoogleMap = () => {
 
 const defaultMapOptions: google.maps.MapOptions = {
   center: {
-    lat: 43.10801147929126,
-    lng: 5.85424287800608,
+    lat: 43.1080115,
+    lng: 5.8542411,
   },
   zoom: 17,
 };

@@ -8,6 +8,7 @@ import carousel from './carousel';
 import hero from './hero';
 import article from './article';
 import uvp from './uvp';
+import about from './about';
 
 export const schemaTypes = [
   pricing,
@@ -18,6 +19,7 @@ export const schemaTypes = [
   hero,
   article,
   uvp,
+  about,
 ];
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [...schemaTypes],

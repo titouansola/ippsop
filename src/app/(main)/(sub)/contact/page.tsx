@@ -1,21 +1,15 @@
 import { ContactForm } from '@ippsop/features/contact/components/ContactForm';
+import { RichText } from '@ippsop/features/common/components/RichText';
+import { fetchAboutData } from '@ippsop/lib/queries/about';
 
-export default function Contact() {
+export default async function Contact() {
+  const aboutData = await fetchAboutData();
   return (
     <>
-      <h1>Gaël Guenec</h1>
+      <h1>{aboutData.title}</h1>
       <section>
         <h2>À propos</h2>
-        <p>
-          Passionné de science et de santé, je me suis toujours intéressé au
-          développement des capacités physiques et du corps humain en général.
-          Au cours de mon master en Science et Technique des Activités Physiques
-          et Sportives, je me suis aperçu que les techniques de préparation
-          physique de haut niveau n&apos;étaient jamais accessibles à tout le
-          monde et encore moins aux personnes souffrant de pathologies ou
-          vieillissantes. C’est alors que j&apos;ai décidé de créer ma structure
-          d&apos;entraînement adaptée pour répondre à ce besoin.
-        </p>
+        <RichText value={aboutData.content} />
       </section>
       <section>
         <h2>Coordonnées</h2>

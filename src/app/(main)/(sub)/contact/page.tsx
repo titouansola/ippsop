@@ -1,8 +1,10 @@
+import { ContactForm } from '@ippsop/features/contact/components/ContactForm';
+
 export default function Contact() {
   return (
     <>
       <h1>Gaël Guenec</h1>
-      <section className={'my-25'}>
+      <section>
         <h2>À propos</h2>
         <p>
           Passionné de science et de santé, je me suis toujours intéressé au
@@ -15,13 +17,13 @@ export default function Contact() {
           d&apos;entraînement adaptée pour répondre à ce besoin.
         </p>
       </section>
-      <section className={'my-25'}>
-        <h2>Contact</h2>
+      <section>
+        <h2>Coordonnées</h2>
         <ul>
           <li>
             Par téléphone ou Whatsapp :{' '}
-            <a className={'underline'} href={'https://wa.me/+33622676909'}>
-              <b>06 22 67 69 09</b>
+            <a className={'underline'} href={'https://wa.me/+33622676009'}>
+              <b>06 22 67 60 09</b>
             </a>
           </li>
           <li>
@@ -31,6 +33,10 @@ export default function Contact() {
             </a>
           </li>
         </ul>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <ContactForm />
       </section>
     </>
   );

@@ -5,5 +5,5 @@ export type Article = {
   description: string;
   url: string;
   thumbnail: SanityImageSource;
-  _createdAt: string;
+  createdAt: string;
 };

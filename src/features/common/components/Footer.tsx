@@ -1,6 +1,6 @@
-import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
+import { LightService } from '@ippsop/models/service-page-content';
 
-export function Footer({ services }: { services: ServicePageContent[] }) {
+export function Footer({ services }: { services: LightService[] }) {
   return (
     <footer className={'bg-black text-white'}>
       <div
@@ -12,7 +12,7 @@ export function Footer({ services }: { services: ServicePageContent[] }) {
           <h6>Gaël Guenec</h6>
           <ul>
             <li>
-              <a href={'https://wa.me/+33622676909'}>
+              <a href={'https://wa.me/+33622676009'}>
                 <svg
                   width="22"
                   height="22"
@@ -32,7 +32,7 @@ export function Footer({ services }: { services: ServicePageContent[] }) {
                     </clipPath>
                   </defs>
                 </svg>
-                06 22 67 69 09
+                06 22 67 60 09
               </a>
             </li>
             <li>
@@ -172,8 +172,8 @@ export function Footer({ services }: { services: ServicePageContent[] }) {
           <h6>Services</h6>
           <ul>
             {services.map(({ title, slug }) => (
-              <li key={slug.current}>
-                <a href={`/services/${slug.current}`}>{title}</a>
+              <li key={slug}>
+                <a href={`/services/${slug}`}>{title}</a>
               </li>
             ))}
           </ul>

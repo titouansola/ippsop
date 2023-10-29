@@ -1,11 +1,9 @@
 import Image from 'next/image';
-import { getClient } from '@ippsop/lib/sanity.client';
-import { Article } from '@ippsop/lib/models/article';
 import { urlFor } from '@ippsop/lib/sanity-image-loader';
+import { fetchArticles } from '@ippsop/lib/queries/article';
 
 export default async function Conference() {
-  const client = getClient();
-  const articles = await client.fetch<Article[]>(`*[_type == 'article']`);
+  const articles = await fetchArticles();
   return (
     <>
       <h1>Conférences</h1>
@@ -14,9 +12,8 @@ export default async function Conference() {
           'mx-auto my-32 flex w-full flex-col justify-center gap-14 md:w-10/12 lg:w-2/3'
         }
       >
-        {articles
-          .sort()
-          .map(({ title, description, url, thumbnail, _createdAt }, index) => (
+        {articles.map(
+          ({ title, description, url, thumbnail, createdAt }, index) => (
             <a
               key={index}
               href={url}
@@ -25,7 +22,7 @@ export default async function Conference() {
             >
               <article
                 className={
-                  'block-shadow duration-base flex w-full flex-col bg-white transition-all md:grid md:h-40 md:grid-cols-3 md:hover:scale-105'
+                  'block-shadow flex w-full flex-col bg-white transition-all duration-base md:grid md:h-40 md:grid-cols-3 md:hover:scale-105'
                 }
               >
                 <div className={'relative max-md:h-56 md:col-span-1'}>
@@ -43,13 +40,14 @@ export default async function Conference() {
                 <div className={'p-4 md:col-span-2 md:h-full'}>
                   <h2 className={'m-0 text-lg'}>{title}</h2>
                   <p className={'my-2 text-gray-500'}>
-                    Publiée le {new Date(_createdAt).toLocaleDateString()}
+                    Publiée le {new Date(createdAt).toLocaleDateString()}
                   </p>
                   <p className={'text-sm md:truncate'}>{description}</p>
                 </div>
               </article>
             </a>
-          ))}
+          )
+        )}
       </div>
     </>
   );

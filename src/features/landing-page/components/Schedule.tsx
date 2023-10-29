@@ -1,10 +1,9 @@
-import { getClient } from '@ippsop/lib/sanity.client';
-import { Schedule } from '@ippsop/lib/models/schedule';
-import { orderedWeekdays } from '@ippsop/lib/models/weekdays';
+import { orderedWeekdays } from '@ippsop/models/weekdays';
+import { fetchSchedule } from '@ippsop/lib/queries/schedule';
 
 export async function Schedule() {
-  const client = getClient();
-  const schedules = await client.fetch<Schedule[]>("*[_type == 'schedule']");
+  const schedules = await fetchSchedule();
+
   return (
     <ul
       className={

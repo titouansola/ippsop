@@ -1,21 +1,14 @@
 import navigation, { RedirectType } from 'next/navigation';
-import { getClient } from '@ippsop/lib/sanity.client';
-import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
 import { RichText } from '@ippsop/features/common/components/RichText';
 import { EndOfPageCTA } from '@ippsop/features/common/EndOfPageCTA';
+import { fetchServicePage } from '@ippsop/lib/queries/services';
 
 export default async function Service({
   params,
 }: {
   params: { slug: string };
 }) {
-  const client = getClient();
-  const pageContent =
-    (
-      await client.fetch<ServicePageContent[]>(
-        `*[_type == 'services' && slug.current == '${params.slug}']`
-      )
-    )?.[0] ?? null;
+  const pageContent = await fetchServicePage(params.slug);
 
   if (!pageContent) {
     void navigation.redirect('/', RedirectType.replace);

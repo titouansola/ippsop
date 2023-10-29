@@ -1,46 +1,43 @@
 import Image from 'next/image';
-import { getClient } from '@ippsop/lib/sanity.client';
-import { UVP } from '@ippsop/lib/models/uvp';
 import { urlFor } from '@ippsop/lib/sanity-image-loader';
+import { fetchUvps } from '@ippsop/lib/queries/uvp';
 
 export async function ValuePropositions() {
-  const client = getClient();
-  const uvps = await client.fetch<UVP[]>(`*[_type == 'uvp']`);
+  const uvps = await fetchUvps();
   return (
     <section
       className={
-        'animate-fade-in-slide-up flex flex-col gap-9 text-white lg:flex-row'
+        'flex animate-fade-in-slide-up flex-col gap-9 text-white lg:flex-row'
       }
     >
-      {uvps
-        .sort((a, b) => a.position - b.position)
-        .map(({ title, content, background }) => (
+      {uvps.map(({ title, content, background, slug }) => (
+        <a
+          key={title}
+          href={`services/${slug}`}
+          className={
+            'block-shadow relative block grow origin-center p-9 transition-all duration-base hover:scale-105'
+          }
+        >
           <div
-            key={title}
             className={
-              'block-shadow duration-base relative grow origin-center p-9 transition-all hover:scale-105'
+              'absolute left-0 top-0 -z-10 h-full w-full bg-primary opacity-70 mix-blend-color'
             }
-          >
-            <div
-              className={
-                'absolute left-0 top-0 -z-10 h-full w-full bg-primary opacity-70 mix-blend-color'
-              }
-            />
-            <div
-              className={
-                'absolute left-0 top-0 -z-20 h-full w-full bg-black opacity-80'
-              }
-            />
-            <Image
-              src={urlFor(background).url()}
-              alt={'background'}
-              className={'-z-30 object-cover filter'}
-              fill
-            />
-            <h2>{title}</h2>
-            <p>{content}</p>
-          </div>
-        ))}
+          />
+          <div
+            className={
+              'absolute left-0 top-0 -z-20 h-full w-full bg-black opacity-80'
+            }
+          />
+          <Image
+            src={urlFor(background).url()}
+            alt={'background'}
+            className={'-z-30 object-cover filter'}
+            fill
+          />
+          <h2>{title}</h2>
+          <p>{content}</p>
+        </a>
+      ))}
 
       <div
         className={
@@ -48,25 +45,25 @@ export async function ValuePropositions() {
         }
       >
         <a
-          className={'duration-base transition-all hover:text-primary'}
+          className={'transition-all duration-base hover:text-primary'}
           href="https://www.facebook.com/preparation.ippsop"
         >
           Facebook
         </a>
         <a
-          className={'duration-base transition-all hover:text-primary'}
+          className={'transition-all duration-base hover:text-primary'}
           href="https://www.youtube.com/@gaelguenec2315"
         >
           YouTube
         </a>
         <a
-          className={'duration-base transition-all hover:text-primary'}
+          className={'transition-all duration-base hover:text-primary'}
           href="https://www.instagram.com/gaelguenec/"
         >
           Instagram
         </a>
         <a
-          className={'duration-base transition-all hover:text-primary'}
+          className={'transition-all duration-base hover:text-primary'}
           href="https://www.linkedin.com/company/ippsop/about/"
         >
           LinkedIn

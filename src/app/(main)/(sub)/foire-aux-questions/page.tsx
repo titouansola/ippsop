@@ -1,12 +1,8 @@
-import { getClient } from '@ippsop/lib/sanity.client';
-import { QnaElement } from '@ippsop/lib/models/qna-element';
 import { EndOfPageCTA } from '@ippsop/features/common/EndOfPageCTA';
+import { fetchQnaElts } from '@ippsop/lib/queries/qna';
 
 export default async function FaQ() {
-  const client = getClient();
-  const qnaElts = (await client.fetch<QnaElement[]>(`*[_type == 'qna']`)).sort(
-    (a, b) => a.position - b.position
-  );
+  const qnaElts = await fetchQnaElts();
 
   return (
     <section>

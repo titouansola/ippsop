@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
+import { LightService } from '@ippsop/models/service-page-content';
 
-export function Navbar({ services }: { services: ServicePageContent[] }) {
+export function Navbar({ services }: { services: LightService[] }) {
   const [navOpened, setNavOpened] = useState(false);
   const [servicesOpened, setServicesOpened] = useState(false);
 
@@ -38,7 +38,7 @@ export function Navbar({ services }: { services: ServicePageContent[] }) {
         <div className={'services-menu relative'}>
           <span
             className={
-              'duration-base services-menu__handle flex items-center gap-2 max-lg:justify-center'
+              'services-menu__handle flex items-center gap-2 duration-base max-lg:justify-center'
             }
             onClick={() => setServicesOpened(!servicesOpened)}
           >
@@ -62,8 +62,8 @@ export function Navbar({ services }: { services: ServicePageContent[] }) {
           >
             <ul>
               {services.map(({ title, slug }) => (
-                <li key={slug.current}>
-                  <a href={`/services/${slug.current}`} onClick={reset}>
+                <li key={slug}>
+                  <a href={`/services/${slug}`} onClick={reset}>
                     {title}
                   </a>
                 </li>

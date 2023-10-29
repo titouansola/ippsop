@@ -16,7 +16,7 @@ export default defineType({
       title: 'Images',
       type: 'array',
       of: [defineArrayMember({ type: 'image' })],
-      validation: (Rule) => Rule.max(5),
+      validation: (Rule) => Rule.required().length(5),
     }),
   ],
 });

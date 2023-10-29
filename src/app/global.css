@@ -74,6 +74,10 @@
     @apply hover:bg-hint-dark duration-base origin-center bg-hint text-white transition-all hover:scale-110;
   }
 
+  button:disabled {
+    @apply pointer-events-none opacity-30;
+  }
+
   footer .footer-block {
     @apply flex flex-col items-center lg:block;
   }
@@ -88,6 +92,10 @@
 
   footer li > * {
     @apply duration-base flex cursor-pointer items-center justify-center gap-3 font-light text-white transition-all hover:text-hint sm:justify-start;
+  }
+
+  input, textarea {
+    @apply py-2 px-3;
   }
 }
 

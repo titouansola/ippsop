@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { orderedWeekdays } from '@ippsop/lib/models/weekdays';
+import { orderedWeekdays } from '@ippsop/models/weekdays';
 
 export default defineType({
   name: 'schedule',

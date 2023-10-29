@@ -1,15 +1,10 @@
 import { PropsWithChildren } from 'react';
 import { Header } from '@ippsop/features/common/components/header/Header';
 import { Footer } from '@ippsop/features/common/components/Footer';
-import { getClient } from '@ippsop/lib/sanity.client';
-import { ServicePageContent } from '@ippsop/lib/models/service-page-content';
+import { fetchLightServiceList } from '@ippsop/lib/queries/services';
 
 export default async function Layout({ children }: PropsWithChildren) {
-  const client = getClient();
-  const services = (
-    await client.fetch<ServicePageContent[]>(`*[_type == 'services']`)
-  ).sort((a, b) => a.position - b.position);
-
+  const services = await fetchLightServiceList();
   return (
     <>
       <Header services={services} />

@@ -1,8 +1,7 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-export type UVP = {
+export type HeroData = {
   title: string;
-  content: string;
-  position: number;
+  subtitle: string;
   background: SanityImageSource;
 };

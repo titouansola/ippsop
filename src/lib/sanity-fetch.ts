@@ -4,6 +4,7 @@ export function sanityFetch<T>(query: string, tag: string) {
   return sanityClient.fetch<T>(
     query,
     {},
-    { cache: 'force-cache', next: { tags: [tag] } }
+    { cache: 'force-cache', next: { revalidate: 60 } }
+    // { cache: 'force-cache', next: { tags: [tag] } }
   );
 }

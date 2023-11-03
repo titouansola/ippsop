@@ -10,7 +10,13 @@ export function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const [token, setToken] = useState<string | null>();
-  const { register, handleSubmit, formState } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { isValid },
+  } = useForm();
+
+  const canSubmit = !loading && !!token && isValid;
 
   const onSubmit = (data: { name: string; email: string; message: string }) => {
     if (!token) {
@@ -76,11 +82,7 @@ export function ContactForm() {
         />
 
         {!success && (
-          <button
-            type={'submit'}
-            className={'primary'}
-            disabled={loading || !(token && formState.isValid)}
-          >
+          <button type={'submit'} className={'primary'} disabled={!canSubmit}>
             {loading ? <SimpleLoader /> : 'Envoyer'}
           </button>
         )}

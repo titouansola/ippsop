@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
 
     revalidateTag(body._type);
 
-    return NextResponse.json({ body });
+    return NextResponse.json({ type: body._type });
   } catch (err) {
     console.error(err);
     return new Response('Internal server error', { status: 500 });

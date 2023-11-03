@@ -1,7 +1,8 @@
 import { defineField, defineType } from 'sanity';
+import { UVP_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'uvp',
+  name: UVP_TAG_NAME,
   title: 'Propositions de valeur',
   type: 'document',
   fields: [

@@ -20,7 +20,12 @@ export function ContactForm() {
     const formData = new FormData();
     Object.entries(data).forEach(([key, value]) => formData.append(key, value));
     fetch('/api/contact', { method: 'POST', body: formData, cache: 'no-cache' })
-      .then(() => setSuccess(true))
+      .then((response) => {
+        if (response.status !== 200) {
+          return setError(true);
+        }
+        setSuccess(true);
+      })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
   };

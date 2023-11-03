@@ -1,7 +1,8 @@
 import { defineField, defineType } from 'sanity';
+import { HERO_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'hero',
+  name: HERO_TAG_NAME,
   title: 'Hero Section',
   type: 'document',
   fields: [

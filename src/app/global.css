@@ -19,7 +19,7 @@
   }
   nav a,
   nav .services-menu__handle {
-    @apply lg:duration-base max-lg:py-4 lg:cursor-pointer lg:px-3 lg:py-1 lg:transition-all;
+    @apply max-lg:py-4 lg:cursor-pointer lg:px-3 lg:py-1 lg:transition-all lg:duration-base;
   }
   nav a:not(:last-child),
   nav .services-menu__handle {
@@ -54,7 +54,7 @@
   }
 
   h1 {
-    @apply font-wide mt-20 text-center text-6xl;
+    @apply mt-20 text-center font-wide text-6xl;
   }
 
   h2 {
@@ -71,7 +71,7 @@
   }
 
   button.primary {
-    @apply hover:bg-hint-dark duration-base origin-center bg-hint text-white transition-all hover:scale-110;
+    @apply origin-center bg-hint text-white transition-all duration-base hover:scale-110 hover:bg-hint-dark;
   }
 
   button:disabled {
@@ -91,11 +91,12 @@
   }
 
   footer li > * {
-    @apply duration-base flex cursor-pointer items-center justify-center gap-3 font-light text-white transition-all hover:text-hint sm:justify-start;
+    @apply flex cursor-pointer items-center justify-center gap-3 font-light text-white transition-all duration-base hover:text-hint sm:justify-start;
   }
 
-  input, textarea {
-    @apply py-2 px-3;
+  input,
+  textarea {
+    @apply px-3 py-2;
   }
 }
 

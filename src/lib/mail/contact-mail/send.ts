@@ -12,14 +12,14 @@ export async function sendContactMessageMail(formData: FormData) {
 
   try {
     await transport.sendMail({
-      from: 'contact@ippsop.fr',
-      to: 'test@test.fr',
+      from: process.env.SMTP_USERNAME,
+      to: 'ippsop0@gmail.com',
       subject: 'Vous avez reçu un nouveau un nouveau message depuis ippsop.fr',
       text: buildEmailContent(name, email, message),
       html: buildHtmlEmail(name, email, message),
     });
   } catch (e) {
-    console.error('Error while sending e-mail');
+    console.error(e);
     return { error: true };
   }
   return { error: false };

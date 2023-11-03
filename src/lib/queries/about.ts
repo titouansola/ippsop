@@ -1,6 +1,11 @@
-import { sanityClient } from '@ippsop/lib/sanity.client';
 import { AboutData } from '@ippsop/models/about-data';
+import { sanityFetch } from '@ippsop/lib/sanity-fetch';
+
+import { ABOUT_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export function fetchAboutData() {
-  return sanityClient.fetch<AboutData>(`*[_type == 'about'][0]`);
+  return sanityFetch<AboutData>(
+    `*[_type == '${ABOUT_TAG_NAME}'][0]`,
+    ABOUT_TAG_NAME
+  );
 }

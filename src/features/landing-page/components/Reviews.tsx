@@ -51,7 +51,7 @@ export function Reviews() {
           />
           <h5 className={'mb-1 font-bold'}>{username}</h5>
           <div
-            className={'bg-star mb-8 block h-[20px] bg-repeat-x'}
+            className={'mb-8 block h-[20px] bg-star bg-repeat-x'}
             style={{ width: rate * 24 }}
           />
           <blockquote className={'font-light italic'}>

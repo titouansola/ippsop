@@ -1,7 +1,8 @@
 import { defineField, defineType } from 'sanity';
+import { QNA_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'qna',
+  name: QNA_TAG_NAME,
   title: 'Foire aux Questions',
   type: 'document',
   fields: [

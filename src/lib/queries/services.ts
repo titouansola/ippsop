@@ -1,17 +1,21 @@
-import { sanityClient } from '@ippsop/lib/sanity.client';
 import {
   LightService,
   ServicePageContent,
 } from '@ippsop/models/service-page-content';
+import { sanityFetch } from '@ippsop/lib/sanity-fetch';
+
+import { SERVICES_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export function fetchLightServiceList() {
-  return sanityClient.fetch<LightService[]>(
-    `*[_type == 'services']| order(position asc) {title,'slug':slug.current}`
+  return sanityFetch<LightService[]>(
+    `*[_type == '${SERVICES_TAG_NAME}']| order(position asc) {title,'slug':slug.current}`,
+    SERVICES_TAG_NAME
   );
 }
 
 export function fetchServicePage(slug: string) {
-  return sanityClient.fetch<ServicePageContent>(
-    `*[_type=='services' && slug.current=='${slug}'][0]`
+  return sanityFetch<ServicePageContent>(
+    `*[_type== '${SERVICES_TAG_NAME}' && slug.current=='${slug}'][0]`,
+    SERVICES_TAG_NAME
   );
 }

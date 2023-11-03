@@ -1,7 +1,8 @@
 import { defineField, defineType } from 'sanity';
+import { ABOUT_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'about',
+  name: ABOUT_TAG_NAME,
   title: 'Contact / À propos',
   type: 'document',
   fields: [

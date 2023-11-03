@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <div className={'px-main max-w-content mx-auto'}>
+      <div className={'px-main mx-auto max-w-content'}>
         <SubHero />
         <ValuePropositions />
         <MainInformation />

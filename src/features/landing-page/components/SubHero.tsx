@@ -4,7 +4,7 @@ export default function SubHero() {
   return (
     <section
       className={
-        'animate-fade-in-slide-down flex flex-col gap-14 lg:flex-row-reverse'
+        'flex animate-fade-in-slide-down flex-col gap-14 lg:flex-row-reverse'
       }
     >
       <div

@@ -1,7 +1,7 @@
 'use client';
 
 import { Schedule, Timing } from '@ippsop/models/schedule';
-import { weekdays } from '@ippsop/models/weekdays';
+import { weekdays } from '@ippsop/lib/constants/weekdays';
 import clsx from 'clsx';
 
 type Props = {

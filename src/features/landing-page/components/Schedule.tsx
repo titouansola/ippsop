@@ -1,4 +1,4 @@
-import { orderedWeekdays } from '@ippsop/models/weekdays';
+import { orderedWeekdays } from '@ippsop/lib/constants/weekdays';
 import { fetchSchedule } from '@ippsop/lib/queries/schedule';
 
 export async function Schedule() {

@@ -1,7 +1,8 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { PRICING_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'pricing',
+  name: PRICING_TAG_NAME,
   title: 'Tarif',
   type: 'document',
   fields: [

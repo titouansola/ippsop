@@ -1,0 +1,9 @@
+export const ABOUT_TAG_NAME = 'about';
+export const ARTICLE_TAG_NAME = 'article';
+export const CAROUSEL_TAG_NAME = 'carousel';
+export const HERO_TAG_NAME = 'hero';
+export const PRICING_TAG_NAME = 'pricing';
+export const QNA_TAG_NAME = 'qna';
+export const SCHEDULE_TAG_NAME = 'schedule';
+export const SERVICES_TAG_NAME = 'services';
+export const UVP_TAG_NAME = 'uvp';

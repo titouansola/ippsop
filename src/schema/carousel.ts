@@ -1,7 +1,8 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { CAROUSEL_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'carousel',
+  name: CAROUSEL_TAG_NAME,
   title: 'Image Carrousel',
   type: 'document',
   fields: [

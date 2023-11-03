@@ -1,8 +1,11 @@
 import { QnaElement } from '@ippsop/models/qna-element';
-import { sanityClient } from '@ippsop/lib/sanity.client';
+import { sanityFetch } from '@ippsop/lib/sanity-fetch';
+
+import { QNA_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export function fetchQnaElts() {
-  return sanityClient.fetch<QnaElement[]>(
-    `*[_type == 'qna'] | order(position asc)`
+  return sanityFetch<QnaElement[]>(
+    `*[_type == '${QNA_TAG_NAME}'] | order(position asc)`,
+    QNA_TAG_NAME
   );
 }

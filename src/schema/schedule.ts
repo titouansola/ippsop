@@ -1,8 +1,9 @@
 import { defineField, defineType } from 'sanity';
-import { orderedWeekdays } from '@ippsop/models/weekdays';
+import { orderedWeekdays } from '@ippsop/lib/constants/weekdays';
+import { SCHEDULE_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'schedule',
+  name: SCHEDULE_TAG_NAME,
   title: 'Horaires',
   type: 'document',
   fields: [

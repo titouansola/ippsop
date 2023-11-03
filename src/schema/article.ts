@@ -1,7 +1,8 @@
 import { defineField, defineType } from 'sanity';
+import { ARTICLE_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export default defineType({
-  name: 'article',
+  name: ARTICLE_TAG_NAME,
   title: 'Conférences',
   type: 'document',
   fields: [

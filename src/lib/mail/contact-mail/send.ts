@@ -13,7 +13,7 @@ export async function sendContactMessageMail(formData: FormData) {
   try {
     await transport.sendMail({
       from: process.env.SMTP_USERNAME,
-      to: 'ippsop0@gmail.com',
+      to: process.env.MAIL_TO,
       subject: 'Vous avez reçu un nouveau un nouveau message depuis ippsop.fr',
       text: buildEmailContent(name, email, message),
       html: buildHtmlEmail(name, email, message),

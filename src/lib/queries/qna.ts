@@ -5,7 +5,6 @@ import { QNA_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export function fetchQnaElts() {
   return sanityFetch<QnaElement[]>(
-    `*[_type == '${QNA_TAG_NAME}'] | order(position asc)`,
-    QNA_TAG_NAME
+    `*[_type == '${QNA_TAG_NAME}'] | order(position asc)`
   );
 }

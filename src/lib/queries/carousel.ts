@@ -5,7 +5,6 @@ import { CAROUSEL_TAG_NAME } from '@ippsop/lib/constants/tag-names';
 
 export function fetchCarouselImages() {
   return sanityFetch<SanityImageSource[]>(
-    `*[_type == '${CAROUSEL_TAG_NAME}'][0].images`,
-    CAROUSEL_TAG_NAME
+    `*[_type == '${CAROUSEL_TAG_NAME}'][0].images`
   );
 }

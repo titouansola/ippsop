@@ -12,7 +12,7 @@ export default function SubHero() {
           'block-shadow relative flex flex-col bg-black px-9 py-6 text-white sm:gap-25 lg:max-w-[40%]'
         }
       >
-        <h2 className={'z-10'}>Gaël Guenec</h2>
+        <h2 className={'z-10 mt-0'}>Gaël Guenec</h2>
         <p className={'z-10'}>
           Professionnel diplômé d’un Master et de deux Licences STAPS ainsi que
           du Certificat d’Éducation Thérapeutique du Patient, je suis à la fois

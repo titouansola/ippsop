@@ -58,7 +58,7 @@
   }
 
   h2 {
-    @apply mb-8 text-4xl font-black;
+    @apply my-8 text-4xl font-black;
   }
 
   h3 {

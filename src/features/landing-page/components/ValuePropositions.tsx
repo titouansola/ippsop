@@ -34,7 +34,7 @@ export async function ValuePropositions() {
             className={'-z-30 object-cover filter'}
             fill
           />
-          <h2>{title}</h2>
+          <h2 className={'mt-0'}>{title}</h2>
           <p>{content}</p>
         </a>
       ))}

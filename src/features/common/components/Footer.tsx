@@ -190,6 +190,14 @@ export function Footer({ services }: { services: LightService[] }) {
             <li>
               <a href={'/foire-aux-questions'}>FAQ</a>
             </li>
+            <li>
+              <a href={'/mentions-legales'}>Mentions légales</a>
+            </li>
+            <li>
+              <a href={'/politique-de-confidentialite'}>
+                Politique de Confidentialité
+              </a>
+            </li>
           </ul>
         </div>
       </div>
